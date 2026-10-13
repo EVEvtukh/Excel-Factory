@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials — NEVER commit
+*.json
+!config.example.json
+
+# Config with secrets
+config.json
+
+# Generated / temporary
+*.txt
+!README.md
+!requirements.txt
+
+# Jupyter
+.ipynb_checkpoints/
