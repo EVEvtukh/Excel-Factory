@@ -679,13 +679,14 @@ class GoogleSheetsClient:
 # Entry point: read every cell of the sheet and print it to the console
 # --------------------------------------------------------------------------- #
 if __name__ == "__main__":
-    # Credentials live in the project next to this module - the client finds
-    # them automatically, the path is given here only for clarity.
-    CREDENTIALS_PATH = Path(__file__).with_name("excel-factory-511418-a6cad01b8b8a.json")
+    # Replace with your service-account JSON filename or set env GOOGLE_SA_JSON
+    CREDENTIALS_PATH = Path(__file__).with_name(
+        os.getenv("GOOGLE_SA_JSON", "service-account.json")
+    )
 
-    # Id from the sheet URL: https://docs.google.com/spreadsheets/d/<THIS_PART>/edit
-    # A full URL works too; env GOOGLE_SPREADSHEET_ID overrides this value.
-    SPREADSHEET_ID = "1TVSodYJHqf0ssgYRBIN-msDYe5xPLw3y8IUG8P8fx8s"
+    # Replace with your spreadsheet ID from:
+    #   https://docs.google.com/spreadsheets/d/<ID>/edit
+    SPREADSHEET_ID = os.getenv("GOOGLE_SPREADSHEET_ID", "YOUR_SPREADSHEET_ID_HERE")
     # Empty string -> the first worksheet tab is used.
     SHEET_NAME = ""
 

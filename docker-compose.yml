@@ -1,0 +1,22 @@
+services:
+  crm-api:
+    build:
+      context: .
+      dockerfile: crm/Dockerfile
+    container_name: excelio-crm
+    ports:
+      - "8000:8000"
+    volumes:
+      # Монтировать исходный код — изменения применяются мгновенно
+      - ./crm:/app/crm
+      # БД и кэш — живут вне контейнера
+      - crm-data:/app/crm-data
+    environment:
+      # Путь к БД вне контейнера (docker volume)
+      - CRM_DB_PATH=/app/crm-data/crm.db
+      # Watchdog-режим: файловая система
+      - WATCHDOG_DISABLE_WATCHDOG=0
+    restart: unless-stopped
+
+volumes:
+  crm-data:

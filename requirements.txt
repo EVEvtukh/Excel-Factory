@@ -1,4 +1,13 @@
+# CRM backend
+fastapi==0.115.14
+uvicorn[standard]==0.32.1
+pydantic==2.13.5
+watchdog==6.0.0
+
+# Google Sheets / Drive
 google-api-python-client==2.201.0
 google-auth==2.62.0
 google-auth-httplib2==0.4.4
+google-auth-oauthlib==1.2.1
+
 # GUI uses tkinter from the standard library — nothing else to install.

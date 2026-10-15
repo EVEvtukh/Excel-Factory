@@ -21,17 +21,27 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Credentials — NEVER commit
-*.json
-!config.example.json
+# Google credentials — NEVER commit
+credentials/
+service-account*.json
+client_secret*.json
+token.json
+token_sheets.json
 
-# Config with secrets
+# Local config with real IDs and paths
 config.json
 
-# Generated / temporary
-*.txt
-!README.md
-!requirements.txt
+# CRM settings (persisted outside project in ~/.excelio_crm_settings.txt)
+.excelio_crm_settings.txt
+
+# Local databases — contain business data
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
 
 # Jupyter
 .ipynb_checkpoints/
